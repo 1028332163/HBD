@@ -1,0 +1,150 @@
+|col1|col2|label|features |rawPrediction |probability|prediction|
+//通过反射机制来使得算法的预测模块共用代码，但是算法的setPredictionCol不是全都一样，导致失败
+//    val loadMethod: Method = Class.forName(modelType).getMethod("read")//根据算法的类型获取相应的读取方法
+//    val transformer = loadMethod.invoke(null).asInstanceOf[MLReader[Any]].load(alPath).asInstanceOf[Transformer]//transformer是model的父类
+////    transformer.set[String]("","")
+//    val resultDf = transformer.transform(dfToCluster)
+//    resultDf.show()
+//    val eval = modelType+"Eval"
+////////kerberos认证
+//        System.setProperty( "java.security.krb5.conf","/root/kerberos/krb5.conf");
+//		    UserGroupInformation.loginUserFromKeytab("hdfs/master@HADOOP.COM", "/root/kerberos/hdfs.keytab");
+//////////////使用官方API合并向量，会产生稀疏向量导致df无法用在算法中
+//       val assembler = new VectorAssembler()
+//                            .setInputCols(colNames)
+//                            .setOutputCol("features")
+//       val dfToScale = assembler.transform(dataFrame)
+//       dfToScale.printSchema()
+////设置权限的语句
+//        System.setProperty( "java.security.krb5.conf","/root/kerberos/krb5.conf");
+//		    UserGroupInformation.loginUserFromKeytab("hdfs/master@HADOOP.COM", "/root/kerberos/hdfs.keytab");
+
+
+
+
+//////////////////////////basedao中用不到的
+/////////////////////////////
+  //  /**
+  //    * 算法处理使用
+  //    */
+  //  //1.tarskId 2.更新的状态值  3. 结果文件  4.结果文件头
+  //  def updateAl(tarskID: Int, status: String, resultJson: String): Unit = {
+  //
+  //    val conn = conncetion()
+  //
+  //    try {
+  //
+  //      val prep = conn.prepareStatement("UPDATE TB_DAE_TARSK_INSTANCE SET  INS_STATUS = ? ,SUMMARY_JSON_CONTENT = ? WHERE ID = ?") //,
+  //
+  //      prep.setString(1, status)
+  //
+  //      prep.setString(2, resultJson)
+  //
+  //      prep.setInt(3, tarskID)
+  //
+  //      val result = prep.execute()
+  //
+  //      println(result)
+  //
+  //    }
+  //    finally {
+  //      conn.close()
+  //    }
+  //  }
+  //  def getRowType(t: String, y: String): Unit = {
+  //    y match {
+  //      case "Int" => t.toInt
+  //      case "String" =>
+  //      case "Double" => t.toDouble
+  //    }
+  //  }
+  //  /**
+  //    * 算法处理使用     //mllib里模型没有信息，暂时不保存 （待改进  :增加模型位置字段）
+  //    */
+  //  //1.tarskId 2.更新的状态值  3. 模型存储位置
+  //  def update(tarskID: Int, status: String, resultJson: String): Unit = {
+  //
+  //    val conn = conncetion()
+  //
+  //    try {
+  //
+  //      val prep = conn.prepareStatement("UPDATE TB_DAE_TARSK_INSTANCE SET  INS_STATUS = ?, SUMMARY_JSON_CONTENT = ? WHERE ID = ?")
+  //
+  //      prep.setString(1, status)
+  //
+  //      prep.setString(2, resultJson)
+  //
+  //      prep.setInt(3, tarskID)
+  //
+  //      val result = prep.execute()
+  //
+  //      println(result)
+  //
+  //    }
+  //    finally {
+  //      conn.close()
+  //    }
+  //  }
+  //  def getColnumString(header: String): Array[String] = {
+  //
+  //    var hiveHead = "`rowNum` int"
+  //
+  //    var tableThred = "<thead> <tr>"
+  //
+  //    var columns = "["
+  //
+  //    val dataHeaderArray = header.split(",")
+  //
+  //    for (i <- 0 until dataHeaderArray.length) {
+  //
+  //      hiveHead = hiveHead + ",`" + dataHeaderArray(i).toLowerCase() + "` double"
+  //
+  //      columns = columns + "{'mDataProp' : '" + dataHeaderArray(i) + "'},"
+  //
+  //      tableThred = tableThred + "<th>" + dataHeaderArray(i) + "</th>"
+  //
+  //    }
+  //    hiveHead = hiveHead.substring(0, hiveHead.length - 1)
+  //
+  //    tableThred = tableThred + "</tr></thead><tbody id='dataSetList'></tbody>"
+  //
+  //    columns = columns + " ]"
+  //
+  //    val headerArr = new scala.collection.mutable.ArrayBuffer[String](3)
+  //
+  //    headerArr(0) = hiveHead
+  //
+  //    headerArr(1) = tableThred
+  //
+  //    headerArr(2) = columns
+  //
+  //    headerArr.toArray
+  //  }
+      //   //算法处理数据集代码
+      //    val kMeansModel = KMeansModel.load(basePath+alPath)
+      //    //使用param设置参数:1.6版本的spark的只能使用param重新设置kmeansModel的参数，2.0中就可以直接设置
+      //    kMeansModel.set[String](new Param(kMeansModel.uid, "predictionCol", ""), predictionCol)
+      //    val finalDf = kMeansModel.transform(dfToUse).select(finalCols.head,finalCols.tail:_*)
+      //    finalDf.show()
+
+          //预测结果数据集 366  /out/20170321/p520_1490084663955.parquet
+          //fpr-tpr(0-0)  368    /showDf/20170321/p520_14900856275991.parquet
+          //recall-precision(0-1) 367  /showDf/20170321/p520_14900856275992.parquet
+          //threshold-precision 366 /showDf/20170321/p520_14900856275993.parquet
+          //threshold-recall   366  /showDf/20170321/p520_14900856275994.parquet
+          //threshold-fmeasure  366  /showDf/20170321/p520_14900856275995.parquet
+          //threshold-precision-recall-fmeasure 366 /showDf/20170321/p520_14900856275996.parquet
+
+          //    val df = sqlContext.read.parquet(basePath + "/showDf/20170321/p520_14900856275991.parquet")
+          //    println("df0815 " + df.count)
+          //    df.show(400)
+          //    val df1 = handleUtil.decDfSize(sqlContext, df, 200)
+          //    df1.show(200)
+          //    println("df0815 " + df1.count)
+
+          //    df.show(400)
+          //    val df1 = sqlContext.read.parquet(basePath + "/showDf/20170321/p520_14900856275994.parquet")
+          //    println("df0815 " + df1.count)
+          //    val joinDf = df1.join(df,df("tpr") === df1("recall"))
+          //    joinDf.show(400)
+          //    joinDf.groupBy("fpr").agg(min("threshold"),max("threshold"),min("tpr"),max("tpr")).sort("fpr").show(100)

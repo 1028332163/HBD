@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.esoft.wms.entity.Job" table="TB_DAE_JOB">
+		<id name="id" type="java.lang.Integer">
+			<generator class="native" />
+		</id>
+		<property column="JOB_UUID" name="jobUuid" not-null="true" />
+		<property column="SERIAL_ID" name="serialId" />
+		<property column="ITEM_UUID" name="itemUuid" />
+		<property column="SON_ITEM_UUID" name="sonItemUuid" />
+		<property column="TASK_INS_JSON" name="taskInsJson" />
+		<property column="PARENT_NUM" name="parentNum" />
+		<property column="END_PARENT_NUM" name="endParentNum" />
+	</class>
+	
+	
+	<class name="com.esoft.wms.entity.TaskInstance" table="TB_DAE_TARSK_INSTANCE">
+		<id name="id" type="java.lang.Integer">
+			<generator class="native" />
+		</id>
+		<property column="NAME" name="name" not-null="true" />
+		<property column="TASK_ID" name="taskId" />
+		<property column="PROJECT_ID" name="projectId" />
+		<property column="SPARK_CMD_CONTENT" name="sparkCmdContent" />
+		<property column="TASK_BEGIN_TIME" name="taskBeginTime" />
+		<property column="JOB_UUID" name="jobUuid" />
+		<property column="ITEM_UUID" name="itemUuid" />
+		<property column="INS_STATUS" name="insStatus" />
+		<property column="MECHANISM_ID" name="mechanismId" />
+	</class>
+
+
+	<class name="com.esoft.wms.entity.TaskInfo" table="TB_DAE_TARSK_INFO">
+		<id name="id" column="ID">
+			<generator class="native" />
+		</id>
+		<property name="name" column="NAME" not-null="false" length="64" />
+		<property name="tarskTID" column="TARSK_TID" not-null="false" />
+		<property name="pID" column="P_ID" not-null="false" />
+		<property name="category" column="CATEGORY" not-null="false" />
+		<property name="tarskTname" column="TARSK_TNAME" not-null="false" />
+		<property name="tarskStatus" column="TARSK_STATUS" not-null="false" />
+		<property name="taskClass" column="TASK_CLASS" not-null="false" />
+		<property name="taskPackage" column="TASK_PACKAGE" not-null="false" />
+		<property name="taskParam" column="TASK_PARAM" not-null="false" />
+		<property name="driverMem" column="DRIVER_MEM" not-null="false" />
+		<property name="executorMem" column="EXECUTOR_MEM" not-null="false" />
+		<property name="bashPath" column="BASH_PATH" not-null="false" />
+		<property name="numExecutors" column="NUM_EXECUTORS"
+			not-null="false" />
+		<property name="paramClass" column="PARAM_CLASS" not-null="false" />
+		<property name="driverClass" column="DRIVER_CLASS" not-null="false" />
+	</class>
+</hibernate-mapping>

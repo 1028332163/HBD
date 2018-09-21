@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="false" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="https://esoftdataserver/svn/ESOFT_IDH_SRC/trunk/MapDemo/%E9%A1%B9%E7%9B%AE%E6%94%B9%E9%80%A0/DAE_V4/branches" />
+                  <option value="https://esoftdataserver/svn/ESOFT_IDH_SRC/trunk/MapDemo/%E9%A1%B9%E7%9B%AE%E6%94%B9%E9%80%A0/DAE_V4/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="https://esoftdataserver/svn/ESOFT_IDH_SRC/branches/dae" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="https://esoftdataserver/svn/ESOFT_IDH_SRC/branches" />
+                  <option value="https://esoftdataserver/svn/ESOFT_IDH_SRC/cassandra-demo" />
+                  <option value="https://esoftdataserver/svn/ESOFT_IDH_SRC/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="https://esoftdataserver/svn/ESOFT_IDH_SRC/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="mySupportsUserInfoFilter" value="true" />
+  </component>
+</project>

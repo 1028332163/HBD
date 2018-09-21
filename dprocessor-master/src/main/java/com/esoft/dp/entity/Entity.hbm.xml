@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.esoft.dp.entity.Task" table="TB_DAE_TARSK_INSTANCE">
+		<id name="id" column="ID">
+			<generator class="native" />
+		</id>
+		<property name="name" column="NAME" not-null="false" length="64" />
+		<property name="insStatus" column="INS_STATUS" length="8" />
+		<property name="parentID" column="PARENT_ID" />
+		<property name="fmtDelimited" column="FMT_DELIMITED" length="8" />
+		<property name="tableName" column="TABLE_NAME" length="64" />
+		<property name="titleContent" column="TITILE_CONTENT" />
+		<property name="uuid" column="UUID" length="128"/>
+		<property column="PROJECT_ID"  name="projectID" />
+		<property column="DATASET_ID"  name="datasetID" />
+		<property column="DATASOURCE_FILE" name="datasourceFile" />
+		<property column="SPARK_RESULT" name="sparkResult" />
+		<property column="SPARK_CMD_CONTENT" name="sparkCmdContent" />
+		<property column="PARAM_JSON_CONTENT" name="paramJsonContent"/>
+		<property column="JOB_SEND_RESULT" name="jobSendResult"/>
+		<many-to-one name="taskInfo" class="com.esoft.dp.entity.TaskInfo"
+			column="TASK_ID" lazy="false" />
+	</class>
+	
+	<!-- task instance 的附属数据表 -->
+	<class name="com.esoft.dp.entity.TaskInstanceData" table="TB_DAE_TARSK_INSTANCE_DATA">
+		<id name="id" column="ID">
+			<generator class="native" />
+		</id>
+		<property name="name" column="NAME" not-null="false" length="64" />
+		<property name="hiveStatus" column="HIVE_STATUS" not-null="false"/>
+		<property name="tableName" column="TABLE_NAME" not-null="false"/>
+		<property name="menuType" column="MENU_TYPE" not-null="false" />
+		<property name="taskID" column="TASK_ID" not-null="false"  />
+		<property name="titleContent" column="TITLE_CONTENT" not-null="false"/>
+		<property name="sparkResult" column="SPARK_RESULT" not-null="false"/>
+		<property name="summaryJsonContent" column="SUMMARY_JSON_CONTENT" not-null="false"/>
+		<property name="datatableColumnsLongtext" column="DATATABLE_COLUMNS_LONGTEXT" not-null="false"/>
+	</class>
+	
+	<class name="com.esoft.dp.entity.TaskInfo" table="TB_DAE_TARSK_INFO">
+		<id name="id" column="ID">
+			<generator class="native" />
+		</id>
+		<property name="name" column="NAME" not-null="false" length="64" />
+		<property name="tarskTID" column="TARSK_TID" not-null="false"/>
+		<property name="tarskTname" column="TARSK_TNAME" not-null="false"/>
+		<property name="taskClass" column="TASK_CLASS" not-null="false" />
+		<property name="taskPackage" column="TASK_PACKAGE" not-null="false"  />
+		<property name="driverMem" column="DRIVER_MEM" not-null="false"/>
+		<property name="executorMem" column="EXECUTOR_MEM" not-null="false"/>
+		<property name="bashPath" column="BASH_PATH" not-null="false"/>
+		<property name="numExecutors" column="NUM_EXECUTORS" not-null="false"/>
+	</class>
+	<class name="com.esoft.dp.entity.OrigialDataSet" table="TB_DAE_ORIGIAL_DATASET">
+		<id name="id" column="ID">
+			<generator class="native" />
+		</id>
+		<property name="name" column="NAME" not-null="false" length="64" />
+		<property name="filePath" column="FILE_PATH" not-null="false"/>
+		<property name="createTime" column="CREATE_TIME" not-null="false"/>
+		<property name="originalType" column="ORIGINAL_TYPE" not-null="false" />
+		<property name="titileContent" column="TITILE_CONTENT" not-null="false" />
+		<property name="datatableColunmsLongtext" column="DATATABLE_COLUNMS_LONGTEXT" not-null="false"/>
+		<property name="theadLongtext" column="THEAD_LONGTEXT" not-null="false"  />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+   <!--
+	<bean id="propertyPlaceholderConfigurer" class="com.esoft.wms.utils.Config">
+		<property name="locations">
+			<list>
+				<value>classpath:/config/config.properties</value>
+			</list>
+		</property>
+	</bean>
+	-->
+	<!-- session and transaction -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${ds.driverClass}" />
+		<property name="jdbcUrl" value="${ds.jdbcUrl}" />
+		<property name="user" value="${ds.username}" />
+		<property name="password" value="${ds.password}" />
+		<property name="minPoolSize" value="${ds.pool.minSize}" />
+		<property name="maxPoolSize" value="${ds.pool.maxSize}" />
+		<property name="maxStatements" value="${ds.pool.maxStatements}" />
+		<property name="maxIdleTime" value="${ds.pool.maxIdleTime}" />
+		<property name="preferredTestQuery" value="${ds.pool.preferredTestQuery}" />
+		<property name="idleConnectionTestPeriod" value="${ds.pool.idleConnectionTestPeriod}" />
+		<property name="testConnectionOnCheckin" value="${ds.pool.testConnectionOnCheckin}" />
+		<property name="testConnectionOnCheckout" value="${ds.pool.testConnectionOnCheckout}" />
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.jdbc.fetch_size">${hibernate.jdbc.fetch_size}</prop>
+				<prop key="hibernate.jdbc.batch_size">${hibernate.jdbc.batch_size}</prop>
+				<prop key="hibernate.cache.use_second_level_cache">false</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="format_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<!-- ORM对象的包路径 -->
+		<property name="mappingResources">
+			<list>
+				<value>com/esoft/wms/entity/Entity.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="del*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="*" read-only="false" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:pointcut id="allManagerMethod"
+			expression="execution(* com.esoft.wms.dao..*.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="allManagerMethod" />
+	</aop:config>
+	
+	<!-- <bean id = "factory" class = "org.atmosphere.cpr.BroadcasterFactory"></bean> 
+		<bean id = "resourceFactory" class = "org.atmosphere.cpr.AtmosphereResourceFactory"></bean> 
+		<bean id = "dsHandlerService" class = "com.esoft.wms.handler.DSHandlerService" 
+		> <property name="factory" ref="factory" /> <property name="resourceFactory" 
+		ref="resourceFactory" /> </bean> -->
+	<!-- 数据层访问 -->
+	<bean id="daoUtility" class="com.esoft.wms.dao.DaoUtility">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- socketClient -->
+	<bean id="socketClient" class="com.esoft.wms.utils.SocketClient">
+		<property name="ip" value="192.168.88.11" />
+		<property name="port" value="10000" />
+	</bean>
+		<!-- reqRouter -->
+	<bean id="jobSubmitter" class="com.esoft.wms.jobServer.JobSubmitter">
+		<property name="client" ref="socketClient" />
+		<property name="daoUtility" ref="daoUtility" />
+	</bean>
+	<bean id="endJobHandler" class="com.esoft.wms.handler.EndJobHandler">
+		<property name="taskInsHandler" ref="taskInsHandler" />
+		<property name="daoUtility" ref="daoUtility" />
+		<property name="jobSubmitter" ref="jobSubmitter" />
+	</bean>
+		<bean id="taskInsHandler" class="com.esoft.wms.handler.TaskInsHandler">
+		<property name="jobSubmitter" ref="jobSubmitter" />
+		<property name="daoUtility" ref="daoUtility" />
+	</bean>
+
+</beans>

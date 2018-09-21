@@ -1,0 +1,146 @@
+package com.esoft.dae.preHandle
+
+import com.esoft.dae.dao.BaseDao
+import org.apache.spark.sql.functions._
+import org.apache.spark.{SparkConf, SparkContext}
+import com.esoft.dae.util.{handleUtil, csvUtil}
+import org.apache.spark.sql.{SaveMode, DataFrame, SQLContext}
+
+/**
+  * @author
+  */
+class missingValueReplace(taskId: String) extends BaseDao(taskId) {
+
+  def execMissingValueHandle(sc: SparkContext, basePath: String, inputPath: String,
+                             handleArg: String,
+                             outputPath: String, taskId: String): Unit = {
+    ///////////构建yarn-spark,从parquet中读取文件
+    val sqlContext = new SQLContext(sc)
+    val dataFrame = sqlContext.read.parquet(basePath + inputPath)
+    //    val dataFrame = csvUtil.readCobCsv(sc, sqlContext, "data/test.csv", "rowNUm int,col1 int,col2 int,label string")
+    viewDf(dataFrame, "dataFrame")
+    //////////////////参数处理
+    val (numArgs, strArgs) = getArgArr(handleArg, dataFrame.dtypes)
+    numArgs.foreach(logger.info(_))
+
+    val numHandled = numArgs.foldLeft(dataFrame) { (dataFrame, arg) => handleNum(dataFrame, arg) }
+    strArgs.foreach(logger.info)
+
+    val finalDf = strArgs.foldLeft(numHandled) { (dataFrame, arg) => handleStr(dataFrame, arg) }
+    finalDf.show
+    ////////////////////保存结果及保存json
+    finalDf.write.format("parquet")
+      .mode(SaveMode.Overwrite)
+      .save(basePath + outputPath)
+    super.flagSparked(taskId.toInt, outputPath, handleUtil.getHeadContent(finalDf.dtypes), "no json")
+  }
+
+  def handleStr(dataFrame: DataFrame, arg: (String, String, String)): DataFrame = {
+    val naHandler = dataFrame.na
+    val (col, oldValue, newValue) = arg
+    oldValue match {
+      case "" => naHandler.fill(newValue, Array(col))
+      case "empty" => naHandler.replace(col, Map("" -> newValue))
+      case "null-empty" => naHandler.fill(newValue, Array(col)).na.replace(col, Map("" -> newValue))
+      case _ => naHandler.replace(col, Map(oldValue -> newValue))
+    }
+  }
+
+  def handleNum(dataFrame: DataFrame, arg: (String, String, String)): DataFrame = {
+    //(col,oldValue,newValue)
+    //    (col1 null 3)
+    val naHandler = dataFrame.na
+    val (col, oldValue) = (arg._1, arg._2)
+
+    val newValue = arg._3 match {
+      case "min" => dataFrame.na.drop(Array(col)).select(min(col)).first.get(0).toString.toDouble
+      case "max" => dataFrame.na.drop(Array(col)).select(max(col)).first.get(0).toString.toDouble
+      case "mean" => dataFrame.na.drop(Array(col)).select(mean(col)).first.get(0).toString.toDouble
+      case _ =>
+        try {
+          arg._3.toDouble
+        } catch {
+          case ex: Exception => throw new Exception("数字列的新替换值不是数字")
+        }
+
+    }
+    arg._2 match {
+      case "" =>
+        naHandler.fill(newValue, Array(col)) //此函数可以替换null和na
+      case _ =>
+        try {
+          naHandler.replace(col, Map(oldValue.toDouble -> newValue))
+        } catch {
+          case ex: Exception => throw new Exception("数字列的被替换值不合法")
+        }
+
+    }
+  }
+
+  def getArgArr(handleArg: String, dType: Array[(String, String)])
+  : (Array[(String, String, String)], Array[(String, String, String)]) = {
+    //   handleArg = ",col2 null max,
+    // label str123 str1234"
+    //  argArr = [[col1 null min]col2 null max,]
+    val colType = Map(dType: _*)
+    val argArr = handleArg.split(",").map { oneArg =>
+      val arr = oneArg.split(" ")
+      Tuple3(arr(0), arr(1), arr(2))
+    }
+    argArr.partition { tuple3 =>
+      colType(tuple3._1) match {
+        case "IntegerType" => true
+        case "DoubleType" => true
+        case _ => false
+      }
+    }
+  }
+
+}
+
+object missingValueReplace {
+
+  def main(args: Array[String]): Unit = {
+    val basePath = ""
+    val inputPath = "data/test.csv"
+
+    val handleArg = "col1 1 88,col2 null max"
+
+    val outputPath = ""
+    val taskId = "182"
+
+    //    val args = Array(basePath, inputPath,
+    //      handleArg,
+    //      outputPath, taskId: String)
+    exec(handleUtil.getContext("missingValueReplace"), args)
+
+  }
+
+
+  def exec(sc: SparkContext, args: Array[String]): Unit = {
+    implicit lazy val formats = org.json4s.jackson.Serialization.formats(org.json4s.NoTypeHints)
+    case class ArgVO(inputPath: String,
+                             handleArg: String,
+                             outputPath: String)
+
+    val executer = new missingValueReplace(args.last)
+    try {
+      args.foreach { x => executer.logger.info("inArg-" + x) }
+      val basePath = args(0)
+      val ArgVO(inputPath: String,
+                             handleArg: String,
+                             outputPath: String)
+      = org.json4s.jackson.Serialization.read[ArgVO](args(1))
+      val taskId = args(2)
+      //executer.checkArgsNum(5, args.length)
+      executer.execMissingValueHandle(sc: SparkContext, basePath: String, inputPath: String,
+                             handleArg: String,
+                             outputPath: String, taskId: String)
+
+
+    } catch {
+      case ex: Throwable => executer.handleException(args(args.length - 1).toInt, ex, "lineREval")
+    }
+  }
+
+}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
+	default-lazy-init="false">
+
+	<!-- 数据层访问 -->
+	<bean id="daoUtility" class="com.esoft.dp.dao.DaoUtility">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- Hive 数据层访问 -->
+	<bean id="hiveDaoUtility" class="com.esoft.dp.dao.HiveDaoUtility">
+		<property name="hiveServerURL" value="${hive.url}" />
+		<property name="hiveServerUser" value="${hive.user}" />
+		<property name="hiveServerPassword" value="${hive.password}" />
+	</bean>
+	<bean id="ioConvertor" class="com.esoft.dp.convert.JsonIoConvertor"></bean>
+	<!-- 执行数据处理任务 -->
+	<bean id="sparkSubmitCommandMgr" class="com.esoft.dp.mgr.impl.SparkSubmitCommandMgrImpl">
+		<property name="cmdDirectory" value="${cmd.command}"></property>
+		<property name="errLogDir" value="${errorLog.dir}"></property>
+		<property name="daoUtility" ref="daoUtility"></property>
+	</bean>
+
+	<!-- 创建Hive 表任务 -->
+	<bean id="hiveDefTarskMgr" class="com.esoft.dp.mgr.impl.HiveDefTarskMgr">
+		<property name="hadoopFSDir" value="${hive.hadoopFSDir}"></property>
+		<property name="checkPrefix" value="${hadoopFS.showDF}"></property>
+		<property name="daoUtility" ref="daoUtility"></property>
+		<property name="hiveDaoUtility" ref="hiveDaoUtility"></property>
+		<property name="hdfs" ref="hdfsUtil"></property>
+		<property name="hiveDbName" value="${hive.hiveDbName}"></property>
+	</bean>
+	<!-- 扫描 slave 表 -->
+	<bean id="pushMgr" class="com.esoft.dp.mgr.impl.PushMgrImpl">
+		<property name="daoUtility" ref="daoUtility"></property>
+		<property name="times" value="${push.pushTimes}"></property>
+		<property name="threshold" value="${push.threshold}"></property>
+	</bean>
+	<!-- 重启挂掉的context -->
+	<bean id="jobServerMgr" class="com.esoft.dp.mgr.impl.JobServerRebootMgrImpl">
+		<property name="jobServerUrl" value="${jobserver.url}"></property>
+	</bean>
+	<!-- 启停jobserver -->
+	<bean id="jobServerOnOffMgr" class="com.esoft.dp.mgr.impl.JobServerOnOffMgrImpl">
+		<property name="jobServerOn" value="${jobServerOn.shell}"></property>
+		<property name="jobServerOff" value="${jobServerOff.shell}"></property>
+		<property name="jobServerPid" value="${jobServer.pid}"></property>
+	</bean>
+	<!-- 启停context -->
+	<bean id="jobServerContextDetailMgr" class="com.esoft.dp.mgr.impl.JobServerContextMgrImpl">
+		<property name="jobServerUrl" value="${jobserver.url}"></property>
+	</bean>
+	<bean id="hdfsUtil" class="com.esoft.dp.utils.HDFSUtil"
+		init-method="initConfig"></bean>
+</beans>

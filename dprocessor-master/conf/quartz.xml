@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
+	default-lazy-init="false">
+	<!-- liuzw test -->
+	<bean id="serviceOpener" class="com.esoft.dp.quartz.ServiceOpenerImpl">
+		<property name="schedulerModifier" ref="schedulerModifier" />
+		<property name="sparkCmdExecutor" ref="sparkCmdExecutor" />
+		<property name="threadNum" value="10" />
+		<property name="ip" value="192.168.88.11" />
+		<property name="port" value="10000" />
+		<property name="backLog" value="10" />
+	</bean>
+	<bean id="schedulerModifier" class="com.esoft.dp.quartz.SchedulerModifier">
+		<property name="scheduler" ref="clusterSchedulerFactoryBean" />
+	</bean>
+	<bean id="sparkCmdExecutor" class="com.esoft.dp.quartz.SparkCmdExecutor">
+		<property name="commandTimeOut" value="60000" />
+	</bean>
+
+	<!-- 匹配 -->
+	<bean id="hiveclusterJobDetail" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.esoft.dp.quartz.ClusterDetailQuartzJobBean" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="targetObject" value="hiveDefTarskMgr" />
+				<entry key="targetMethod" value="invoke" />
+			</map>
+		</property>
+	</bean>
+	<bean id="hiveCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="hiveclusterJobDetail" />
+		<property name="cronExpression" value="0/5 * 1-22 * * ?" />
+	</bean>
+	<!-- 执行数据处理任务 -->
+	<bean id="featureExpclusterJobDetail" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<!-- jobClass属性即我们在java代码中定义的任务类 -->
+		<property name="jobClass"
+			value="com.esoft.dp.quartz.ClusterDetailQuartzJobBean" />
+		<!-- jobDataAsMap属性即该任务类中需要注入的属性值 -->
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="targetObject" value="sparkSubmitCommandMgr" />
+				<entry key="targetMethod" value="invoke" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="featureExpCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="featureExpclusterJobDetail" />
+		<property name="cronExpression" value="0/30 * 1-22 * * ?" />
+	</bean>
+	<!-- 推送状态重置 定时任务 -->
+	<bean id="pushMgrJobDetail" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.esoft.dp.quartz.ClusterDetailQuartzJobBean" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="targetObject" value="pushMgr" />
+				<entry key="targetMethod" value="invoke" />
+			</map>
+		</property>
+	</bean>
+	<bean id="pushMgrTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="pushMgrJobDetail" />
+		<property name="cronExpression" value="0/5 * 1-22 * * ?" />
+	</bean>
+	<!-- 重启挂掉的context -->
+	<bean id="jobServerJobDetail" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.esoft.dp.quartz.ClusterDetailQuartzJobBean" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="targetObject" value="jobServerMgr" />
+				<entry key="targetMethod" value="invoke" />
+			</map>
+		</property>
+	</bean>
+	<bean id="jobServerTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="jobServerJobDetail" />
+		<property name="cronExpression" value="0/60 * * * * ?" />
+	</bean>
+	<!-- 启停jobserver -->
+	<bean id="jobServerOnOffJobDetail" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.esoft.dp.quartz.ClusterDetailQuartzJobBean" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="targetObject" value="jobServerOnOffMgr" />
+				<entry key="targetMethod" value="invoke" />
+			</map>
+		</property>
+	</bean>
+	<bean id="jobServerOnOffTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="jobServerOnOffJobDetail" />
+		<property name="cronExpression" value="0/55 * * * * ?" />
+	</bean>
+	<!-- 启停context -->
+	<bean id="jobServerContextDetail" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.esoft.dp.quartz.ClusterDetailQuartzJobBean" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="targetObject" value="jobServerContextDetailMgr" />
+				<entry key="targetMethod" value="invoke" />
+			</map>
+		</property>
+	</bean>
+	<bean id="jobServerContextTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="jobServerContextDetail" />
+		<property name="cronExpression" value="0/20 * * * * ?" />
+	</bean>
+	<!-- 集群任务工厂 -->
+	<bean id="clusterSchedulerFactoryBean"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<!-- 调用Quartz的配置文件 -->
+		<property name="configLocation" value="classpath:quartz.properties" />
+		<!-- 如果和Spring集成，则可以调用Spring的dataSource，如果不集成，则使用Quartz的dataSource，具体配置在quartz.properties -->
+		<!-- 这里使用Spring的dataSource -->
+		<!-- <property name="dataSource" ref="dataSource" /> -->
+		<!-- 获取Spring的上下文 -->
+		<property name="applicationContextSchedulerContextKey" value="applicationContext" />
+		<!-- 在服务启动之后60秒再启动Job，时间可改，单位为秒 -->
+		<property name="startupDelay" value="1" />
+		<!-- 这个是可选，QuartzScheduler启动时更新己存在的Job，这样就不用每次修改targetObject后删除qrtz_job_details表对应记录了 -->
+		<property name="overwriteExistingJobs" value="true" />
+		<!-- 需要触发的任务 -->
+		<property name="triggers">
+			<list>
+				<ref bean="featureExpCronTriggerBean" />   <!-- Spark任务 -->
+				<ref bean="hiveCronTriggerBean" />        <!-- 生成hive表并load 数据 -->
+				<!--<ref bean="pushMgrTriggerBean" />         <!-- 重新向前台推送sparked的task -->
+				<!-- <ref bean="jobServerTriggerBean" />         重启挂掉的context -->
+				<!--<ref bean="jobServerOnOffTriggerBean" />          启停jobserver -->
+				<!--<ref bean="jobServerContextTriggerBean" />    启停context -->
+			</list>
+		</property>
+	</bean>
+</beans>

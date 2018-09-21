@@ -1,0 +1,7 @@
+col1,col2,label,labelstr
+a,10,1,a
+NaN,2,2,b
+1,1,1,c
+2,3,2,d
+3,2,3,
+a,a,a,a

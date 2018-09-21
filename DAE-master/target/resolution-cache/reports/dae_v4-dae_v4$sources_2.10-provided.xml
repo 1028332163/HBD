@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="dae_v4"
+		module="dae_v4$sources_2.10"
+		revision="1.0"
+		conf="provided"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
+		date="20170420113005"/>
+	<dependencies>
+		<module organisation="spark.jobserver" name="job-server-extras_2.10">
+			<revision name="0.7.0-SNAPSHOT_cdh-5.7" status="release" pubdate="20170104103940" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spark-jobserver/spark-jobserver" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="10">
+				<license name="Apache-2.0" url="http://choosealicense.com/licenses/apache/"/>
+				<metadata-artifact status="no" details="" size="4665" time="0" location="C:\Users\asus\.ivy2\cache\spark.jobserver\job-server-extras_2.10\ivy-0.7.0-SNAPSHOT_cdh-5.7.xml" searched="false" origin-is-local="true" origin-location="C:\Users\asus\.ivy2\local\spark.jobserver\job-server-extras_2.10\0.7.0-SNAPSHOT_cdh-5.7\ivys\ivy.xml"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="0.7.0-SNAPSHOT_cdh-5.7" rev-constraint-default="0.7.0-SNAPSHOT_cdh-5.7" rev-constraint-dynamic="0.7.0-SNAPSHOT_cdh-5.7" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="job-server-extras_2.10" type="jar" ext="jar" status="no" details="" size="45650" time="0" location="C:\Users\asus\.ivy2\local\spark.jobserver\job-server-extras_2.10\0.7.0-SNAPSHOT_cdh-5.7\jars\job-server-extras_2.10.jar">
+						<origin-location is-local="true" location="C:\Users\asus\.ivy2\local\spark.jobserver\job-server-extras_2.10\0.7.0-SNAPSHOT_cdh-5.7\jars\job-server-extras_2.10.jar"/>
+					</artifact>
+					<artifact name="job-server-extras_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="6679" time="0" location="C:\Users\asus\.ivy2\local\spark.jobserver\job-server-extras_2.10\0.7.0-SNAPSHOT_cdh-5.7\srcs\job-server-extras_2.10-sources.jar">
+						<origin-location is-local="true" location="C:\Users\asus\.ivy2\local\spark.jobserver\job-server-extras_2.10\0.7.0-SNAPSHOT_cdh-5.7\srcs\job-server-extras_2.10-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="spark.jobserver" name="job-server_2.10">
+			<revision name="0.7.0-SNAPSHOT_cdh-5.7" status="release" pubdate="20170104103930" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spark-jobserver/spark-jobserver" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="12">
+				<license name="Apache-2.0" url="http://choosealicense.com/licenses/apache/"/>
+				<metadata-artifact status="no" details="" size="4079" time="0" location="C:\Users\asus\.ivy2\cache\spark.jobserver\job-server_2.10\ivy-0.7.0-SNAPSHOT_cdh-5.7.xml" searched="false" origin-is-local="true" origin-location="C:\Users\asus\.ivy2\local\spark.jobserver\job-server_2.10\0.7.0-SNAPSHOT_cdh-5.7\ivys\ivy.xml"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="0.7.0-SNAPSHOT_cdh-5.7" rev-constraint-default="0.7.0-SNAPSHOT_cdh-5.7" rev-constraint-dynamic="0.7.0-SNAPSHOT_cdh-5.7" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="job-server_2.10" type="jar" ext="jar" status="no" details="" size="796978" time="0" location="C:\Users\asus\.ivy2\local\spark.jobserver\job-server_2.10\0.7.0-SNAPSHOT_cdh-5.7\jars\job-server_2.10.jar">
+						<origin-location is-local="true" location="C:\Users\asus\.ivy2\local\spark.jobserver\job-server_2.10\0.7.0-SNAPSHOT_cdh-5.7\jars\job-server_2.10.jar"/>
+					</artifact>
+					<artifact name="job-server_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="119841" time="0" location="C:\Users\asus\.ivy2\local\spark.jobserver\job-server_2.10\0.7.0-SNAPSHOT_cdh-5.7\srcs\job-server_2.10-sources.jar">
+						<origin-location is-local="true" location="C:\Users\asus\.ivy2\local\spark.jobserver\job-server_2.10\0.7.0-SNAPSHOT_cdh-5.7\srcs\job-server_2.10-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.shiro" name="shiro-core">
+			<revision name="1.2.4" status="release" pubdate="20150708121206" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="40">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="17352" time="0" location="C:\Users\asus\.ivy2\cache\org.apache.shiro\shiro-core\ivy-1.2.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/shiro/shiro-core/1.2.4/shiro-core-1.2.4.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.2.4" rev-constraint-default="1.2.4" rev-constraint-dynamic="1.2.4" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="shiro-core" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="568346" time="0" location="C:\Users\asus\.ivy2\cache\org.apache.shiro\shiro-core\srcs\shiro-core-1.2.4-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/apache/shiro/shiro-core/1.2.4/shiro-core-1.2.4-sources.jar"/>
+					</artifact>
+					<artifact name="shiro-core" type="jar" ext="jar" status="no" details="" size="379541" time="0" location="C:\Users\asus\.ivy2\cache\org.apache.shiro\shiro-core\jars\shiro-core-1.2.4.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/apache/shiro/shiro-core/1.2.4/shiro-core-1.2.4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="commons-beanutils" name="commons-beanutils">
+			<revision name="1.8.3" status="release" pubdate="20100325011600" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/beanutils/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="41">
+				<metadata-artifact status="no" details="" size="6476" time="0" location="C:\Users\asus\.ivy2\cache\commons-beanutils\commons-beanutils\ivy-1.8.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.8.3" rev-constraint-default="1.8.3" rev-constraint-dynamic="1.8.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="commons-beanutils" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="296761" time="0" location="C:\Users\asus\.ivy2\cache\commons-beanutils\commons-beanutils\srcs\commons-beanutils-1.8.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3-sources.jar"/>
+					</artifact>
+					<artifact name="commons-beanutils" type="jar" ext="jar" status="no" details="" size="232019" time="0" location="C:\Users\asus\.ivy2\cache\commons-beanutils\commons-beanutils\jars\commons-beanutils-1.8.3.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="mysql" name="mysql-connector-java">
+			<revision name="5.1.36" status="release" pubdate="20150620032624" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://dev.mysql.com/doc/connector-j/en/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="39">
+				<license name="The GNU General Public License, Version 2" url="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html"/>
+				<metadata-artifact status="no" details="" size="2568" time="0" location="C:\Users\asus\.ivy2\cache\mysql\mysql-connector-java\ivy-5.1.36.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.36/mysql-connector-java-5.1.36.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="5.1.36" rev-constraint-default="5.1.36" rev-constraint-dynamic="5.1.36" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="mysql-connector-java" type="jar" ext="jar" status="no" details="" size="972007" time="0" location="C:\Users\asus\.ivy2\cache\mysql\mysql-connector-java\jars\mysql-connector-java-5.1.36.jar">
+						<origin-location is-local="false" location="UNKNOWN"/>
+					</artifact>
+					<artifact name="mysql-connector-java" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="880043" time="0" location="C:\Users\asus\.ivy2\cache\mysql\mysql-connector-java\srcs\mysql-connector-java-5.1.36-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/mysql/mysql-connector-java/5.1.36/mysql-connector-java-5.1.36-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.flywaydb" name="flyway-core">
+			<revision name="3.2.1" status="release" pubdate="20150320225350" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="38">
+				<license name="Apache License, Version 2.0" url="https://github.com/flyway/flyway/blob/master/LICENSE.txt"/>
+				<metadata-artifact status="no" details="" size="13193" time="0" location="C:\Users\asus\.ivy2\cache\org.flywaydb\flyway-core\ivy-3.2.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/flywaydb/flyway-core/3.2.1/flyway-core-3.2.1.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="3.2.1" rev-constraint-default="3.2.1" rev-constraint-dynamic="3.2.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="flyway-core" type="jar" ext="jar" status="no" details="" size="292011" time="0" location="C:\Users\asus\.ivy2\cache\org.flywaydb\flyway-core\jars\flyway-core-3.2.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/flywaydb/flyway-core/3.2.1/flyway-core-3.2.1.jar"/>
+					</artifact>
+					<artifact name="flyway-core" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="264186" time="0" location="C:\Users\asus\.ivy2\cache\org.flywaydb\flyway-core\srcs\flyway-core-3.2.1-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/flywaydb/flyway-core/3.2.1/flyway-core-3.2.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="commons-dbcp" name="commons-dbcp">
+			<revision name="1.4" status="release" pubdate="20100208015626" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/dbcp/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="36">
+				<metadata-artifact status="no" details="" size="5755" time="0" location="C:\Users\asus\.ivy2\cache\commons-dbcp\commons-dbcp\ivy-1.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.4" rev-constraint-default="1.4" rev-constraint-dynamic="1.4" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="commons-dbcp" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="159513" time="0" location="C:\Users\asus\.ivy2\cache\commons-dbcp\commons-dbcp\srcs\commons-dbcp-1.4-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4-sources.jar"/>
+					</artifact>
+					<artifact name="commons-dbcp" type="jar" ext="jar" status="no" details="" size="160519" time="0" location="C:\Users\asus\.ivy2\cache\commons-dbcp\commons-dbcp\jars\commons-dbcp-1.4.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="commons-pool" name="commons-pool">
+			<revision name="1.5.4" status="release" pubdate="20091113094653" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/pool/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="37">
+				<metadata-artifact status="no" details="" size="4940" time="0" location="C:\Users\asus\.ivy2\cache\commons-pool\commons-pool\ivy-1.5.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.5.4" rev-constraint-default="1.5.4" rev-constraint-dynamic="1.5.4" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="commons-pool" type="jar" ext="jar" status="no" details="" size="96221" time="0" location="C:\Users\asus\.ivy2\cache\commons-pool\commons-pool\jars\commons-pool-1.5.4.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.jar"/>
+					</artifact>
+					<artifact name="commons-pool" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="96194" time="0" location="C:\Users\asus\.ivy2\cache\commons-pool\commons-pool\srcs\commons-pool-1.5.4-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.h2database" name="h2">
+			<revision name="1.3.176" status="release" pubdate="20140405205937" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.h2database.com" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="35">
+				<license name="The H2 License, Version 1.0" url="http://h2database.com/html/license.html"/>
+				<metadata-artifact status="no" details="" size="2463" time="0" location="C:\Users\asus\.ivy2\cache\com.h2database\h2\ivy-1.3.176.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/h2database/h2/1.3.176/h2-1.3.176.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.3.176" rev-constraint-default="1.3.176" rev-constraint-dynamic="1.3.176" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="h2" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1175288" time="0" location="C:\Users\asus\.ivy2\cache\com.h2database\h2\srcs\h2-1.3.176-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/h2database/h2/1.3.176/h2-1.3.176-sources.jar"/>
+					</artifact>
+					<artifact name="h2" type="jar" ext="jar" status="no" details="" size="1659879" time="0" location="C:\Users\asus\.ivy2\cache\com.h2database\h2\jars\h2-1.3.176.jar">
+						<origin-location is-local="false" location="UNKNOWN"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.slick" name="slick_2.10">
+			<revision name="3.1.1" status="release" pubdate="20151216041247" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://slick.typesafe.com" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="33">
+				<license name="Two-clause BSD-style license" url="http://github.com/slick/slick/blob/master/LICENSE.txt"/>
+				<metadata-artifact status="no" details="" size="3130" time="0" location="C:\Users\asus\.ivy2\cache\com.typesafe.slick\slick_2.10\ivy-3.1.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/slick/slick_2.10/3.1.1/slick_2.10-3.1.1.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="3.1.1" rev-constraint-default="3.1.1" rev-constraint-dynamic="3.1.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="slick_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="293886" time="0" location="C:\Users\asus\.ivy2\cache\com.typesafe.slick\slick_2.10\srcs\slick_2.10-3.1.1-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/slick/slick_2.10/3.1.1/slick_2.10-3.1.1-sources.jar"/>
+					</artifact>
+					<artifact name="slick_2.10" type="jar" ext="jar" status="no" details="" size="4791598" time="0" location="C:\Users\asus\.ivy2\cache\com.typesafe.slick\slick_2.10\jars\slick_2.10-3.1.1.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/slick/slick_2.10/3.1.1/slick_2.10-3.1.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.reactivestreams" name="reactive-streams">
+			<revision name="1.0.0" status="release" pubdate="20150430001454" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.reactive-streams.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="34">
+				<license name="CC0" url="http://creativecommons.org/publicdomain/zero/1.0/"/>
+				<metadata-artifact status="no" details="" size="2523" time="0" location="C:\Users\asus\.ivy2\cache\org.reactivestreams\reactive-streams\ivy-1.0.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="reactive-streams" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="3130" time="0" location="C:\Users\asus\.ivy2\cache\org.reactivestreams\reactive-streams\srcs\reactive-streams-1.0.0-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0-sources.jar"/>
+					</artifact>
+					<artifact name="reactive-streams" type="jar" ext="jar" status="no" details="" size="2042" time="0" location="C:\Users\asus\.ivy2\cache\org.reactivestreams\reactive-streams\jars\reactive-streams-1.0.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="spark.jobserver" name="akka-app_2.10">
+			<revision name="0.7.0-SNAPSHOT_cdh-5.7" status="release" pubdate="20170104103923" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spark-jobserver/spark-jobserver" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="13">
+				<license name="Apache-2.0" url="http://choosealicense.com/licenses/apache/"/>
+				<metadata-artifact status="no" details="" size="4184" time="0" location="C:\Users\asus\.ivy2\cache\spark.jobserver\akka-app_2.10\ivy-0.7.0-SNAPSHOT_cdh-5.7.xml" searched="false" origin-is-local="true" origin-location="C:\Users\asus\.ivy2\local\spark.jobserver\akka-app_2.10\0.7.0-SNAPSHOT_cdh-5.7\ivys\ivy.xml"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="0.7.0-SNAPSHOT_cdh-5.7" rev-constraint-default="0.7.0-SNAPSHOT_cdh-5.7" rev-constraint-dynamic="0.7.0-SNAPSHOT_cdh-5.7" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="akka-app_2.10" type="jar" ext="jar" status="no" details="" size="81153" time="0" location="C:\Users\asus\.ivy2\local\spark.jobserver\akka-app_2.10\0.7.0-SNAPSHOT_cdh-5.7\jars\akka-app_2.10.jar">
+						<origin-location is-local="true" location="C:\Users\asus\.ivy2\local\spark.jobserver\akka-app_2.10\0.7.0-SNAPSHOT_cdh-5.7\jars\akka-app_2.10.jar"/>
+					</artifact>
+					<artifact name="akka-app_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="9997" time="0" location="C:\Users\asus\.ivy2\local\spark.jobserver\akka-app_2.10\0.7.0-SNAPSHOT_cdh-5.7\srcs\akka-app_2.10-sources.jar">
+						<origin-location is-local="true" location="C:\Users\asus\.ivy2\local\spark.jobserver\akka-app_2.10\0.7.0-SNAPSHOT_cdh-5.7\srcs\akka-app_2.10-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-client">
+			<revision name="1.2.3" status="release" pubdate="20150324214614" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="32">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3670" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-client\ivy-1.2.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/spray/spray-client/1.2.3/spray-client-1.2.3.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.2.3" rev-constraint-default="1.2.3" rev-constraint-dynamic="1.2.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-client" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="3911" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-client\srcs\spray-client-1.2.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-client/1.2.3/spray-client-1.2.3-sources.jar"/>
+					</artifact>
+					<artifact name="spray-client" type="jar" ext="jar" status="no" details="" size="44966" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-client\jars\spray-client-1.2.3.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-client/1.2.3/spray-client-1.2.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-routing">
+			<revision name="1.2.3" status="release" pubdate="20150324214314" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="28">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3716" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-routing\ivy-1.2.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/spray/spray-routing/1.2.3/spray-routing-1.2.3.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.2.3" rev-constraint-default="1.2.3" rev-constraint-dynamic="1.2.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-routing" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="80485" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-routing\srcs\spray-routing-1.2.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-routing/1.2.3/spray-routing-1.2.3-sources.jar"/>
+					</artifact>
+					<artifact name="spray-routing" type="jar" ext="jar" status="no" details="" size="1107664" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-routing\jars\spray-routing-1.2.3.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-routing/1.2.3/spray-routing-1.2.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.chuusai" name="shapeless_2.10">
+			<revision name="1.2.4" status="release" pubdate="20130227035121" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/milessabin/shapeless" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="31">
+				<license name="Apache License" url="http://www.apache.org/licenses/"/>
+				<metadata-artifact status="no" details="" size="2667" time="0" location="C:\Users\asus\.ivy2\cache\com.chuusai\shapeless_2.10\ivy-1.2.4.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/chuusai/shapeless_2.10/1.2.4/shapeless_2.10-1.2.4.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.2.4" rev-constraint-default="1.2.4" rev-constraint-dynamic="1.2.4" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="shapeless_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="74241" time="0" location="C:\Users\asus\.ivy2\cache\com.chuusai\shapeless_2.10\srcs\shapeless_2.10-1.2.4-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/chuusai/shapeless_2.10/1.2.4/shapeless_2.10-1.2.4-sources.jar"/>
+					</artifact>
+					<artifact name="shapeless_2.10" type="jar" ext="jar" status="no" details="" size="1280423" time="0" location="C:\Users\asus\.ivy2\cache\com.chuusai\shapeless_2.10\jars\shapeless_2.10-1.2.4.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/chuusai/shapeless_2.10/1.2.4/shapeless_2.10-1.2.4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-httpx">
+			<revision name="1.2.3" status="release" pubdate="20150324214509" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="29">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="4461" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-httpx\ivy-1.2.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/spray/spray-httpx/1.2.3/spray-httpx-1.2.3.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.2.3" rev-constraint-default="1.2.3" rev-constraint-dynamic="1.2.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-httpx" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="45491" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-httpx\srcs\spray-httpx-1.2.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-httpx/1.2.3/spray-httpx-1.2.3-sources.jar"/>
+					</artifact>
+					<artifact name="spray-httpx" type="jar" ext="jar" status="no" details="" size="463690" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-httpx\jars\spray-httpx-1.2.3.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-httpx/1.2.3/spray-httpx-1.2.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.jvnet.mimepull" name="mimepull">
+			<revision name="1.9.5" status="release" pubdate="20150313191011" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://mimepull.java.net" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="30">
+				<license name="CDDL 1.1" url="https://glassfish.java.net/public/CDDL+GPL_1_1.html"/>
+				<license name="GPL2 w/ CPE" url="https://glassfish.java.net/public/CDDL+GPL_1_1.html"/>
+				<metadata-artifact status="no" details="" size="3865" time="0" location="C:\Users\asus\.ivy2\cache\org.jvnet.mimepull\mimepull\ivy-1.9.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/jvnet/mimepull/mimepull/1.9.5/mimepull-1.9.5.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.9.5" rev-constraint-default="1.9.5" rev-constraint-dynamic="1.9.5" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="mimepull" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="68147" time="0" location="C:\Users\asus\.ivy2\cache\org.jvnet.mimepull\mimepull\srcs\mimepull-1.9.5-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/jvnet/mimepull/mimepull/1.9.5/mimepull-1.9.5-sources.jar"/>
+					</artifact>
+					<artifact name="mimepull" type="jar" ext="jar" status="no" details="" size="63621" time="0" location="C:\Users\asus\.ivy2\cache\org.jvnet.mimepull\mimepull\jars\mimepull-1.9.5.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/jvnet/mimepull/mimepull/1.9.5/mimepull-1.9.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-caching">
+			<revision name="1.2.3" status="release" pubdate="20150324214536" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="26">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3315" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-caching\ivy-1.2.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/spray/spray-caching/1.2.3/spray-caching-1.2.3.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.2.3" rev-constraint-default="1.2.3" rev-constraint-dynamic="1.2.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-caching" type="jar" ext="jar" status="no" details="" size="29820" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-caching\jars\spray-caching-1.2.3.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-caching/1.2.3/spray-caching-1.2.3.jar"/>
+					</artifact>
+					<artifact name="spray-caching" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="4852" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-caching\srcs\spray-caching-1.2.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-caching/1.2.3/spray-caching-1.2.3-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.googlecode.concurrentlinkedhashmap" name="concurrentlinkedhashmap-lru">
+			<revision name="1.4.2" status="release" pubdate="20150128093055" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://code.google.com/p/concurrentlinkedhashmap" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="27">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="5220" time="0" location="C:\Users\asus\.ivy2\cache\com.googlecode.concurrentlinkedhashmap\concurrentlinkedhashmap-lru\ivy-1.4.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/googlecode/concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.4.2/concurrentlinkedhashmap-lru-1.4.2.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.4.2" rev-constraint-default="1.4.2" rev-constraint-dynamic="1.4.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="concurrentlinkedhashmap-lru" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="57410" time="0" location="C:\Users\asus\.ivy2\cache\com.googlecode.concurrentlinkedhashmap\concurrentlinkedhashmap-lru\srcs\concurrentlinkedhashmap-lru-1.4.2-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/googlecode/concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.4.2/concurrentlinkedhashmap-lru-1.4.2-sources.jar"/>
+					</artifact>
+					<artifact name="concurrentlinkedhashmap-lru" type="jar" ext="jar" status="no" details="" size="116565" time="0" location="C:\Users\asus\.ivy2\cache\com.googlecode.concurrentlinkedhashmap\concurrentlinkedhashmap-lru\jars\concurrentlinkedhashmap-lru-1.4.2.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/googlecode/concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.4.2/concurrentlinkedhashmap-lru-1.4.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-can">
+			<revision name="1.2.3" status="release" pubdate="20150324214218" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="20">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3525" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-can\ivy-1.2.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/spray/spray-can/1.2.3/spray-can-1.2.3.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.2.3" rev-constraint-default="1.2.3" rev-constraint-dynamic="1.2.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-can" type="jar" ext="jar" status="no" details="" size="734209" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-can\jars\spray-can-1.2.3.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-can/1.2.3/spray-can-1.2.3.jar"/>
+					</artifact>
+					<artifact name="spray-can" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="84495" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-can\srcs\spray-can-1.2.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-can/1.2.3/spray-can-1.2.3-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-io">
+			<revision name="1.2.3" status="release" pubdate="20150324214645" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="21">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3291" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-io\ivy-1.2.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/spray/spray-io/1.2.3/spray-io-1.2.3.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.2.3" rev-constraint-default="1.2.3" rev-constraint-dynamic="1.2.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-io" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="20764" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-io\srcs\spray-io-1.2.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-io/1.2.3/spray-io-1.2.3-sources.jar"/>
+					</artifact>
+					<artifact name="spray-io" type="jar" ext="jar" status="no" details="" size="196520" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-io\jars\spray-io-1.2.3.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-io/1.2.3/spray-io-1.2.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-http">
+			<revision name="1.2.3" status="release" pubdate="20150324214430" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="23">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3277" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-http\ivy-1.2.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/spray/spray-http/1.2.3/spray-http-1.2.3.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.2.3" rev-constraint-default="1.2.3" rev-constraint-dynamic="1.2.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-http" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="99072" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-http\srcs\spray-http-1.2.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-http/1.2.3/spray-http-1.2.3-sources.jar"/>
+					</artifact>
+					<artifact name="spray-http" type="jar" ext="jar" status="no" details="" size="1525240" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-http\jars\spray-http-1.2.3.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-http/1.2.3/spray-http-1.2.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.parboiled" name="parboiled-scala_2.10">
+			<revision name="1.1.7" status="release" pubdate="20150210001123" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://parboiled.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="24">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3003" time="0" location="C:\Users\asus\.ivy2\cache\org.parboiled\parboiled-scala_2.10\ivy-1.1.7.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/parboiled/parboiled-scala_2.10/1.1.7/parboiled-scala_2.10-1.1.7.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.1.7" rev-constraint-default="1.1.7" rev-constraint-dynamic="1.1.7" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="parboiled-scala_2.10" type="jar" ext="jar" status="no" details="" size="237145" time="0" location="C:\Users\asus\.ivy2\cache\org.parboiled\parboiled-scala_2.10\jars\parboiled-scala_2.10-1.1.7.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/parboiled/parboiled-scala_2.10/1.1.7/parboiled-scala_2.10-1.1.7.jar"/>
+					</artifact>
+					<artifact name="parboiled-scala_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="28671" time="0" location="C:\Users\asus\.ivy2\cache\org.parboiled\parboiled-scala_2.10\srcs\parboiled-scala_2.10-1.1.7-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/parboiled/parboiled-scala_2.10/1.1.7/parboiled-scala_2.10-1.1.7-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.parboiled" name="parboiled-core">
+			<revision name="1.1.7" status="release" pubdate="20150210001230" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://parboiled.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="25">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2696" time="0" location="C:\Users\asus\.ivy2\cache\org.parboiled\parboiled-core\ivy-1.1.7.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.7/parboiled-core-1.1.7.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.1.7" rev-constraint-default="1.1.7" rev-constraint-dynamic="1.1.7" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="parboiled-core" type="jar" ext="jar" status="no" details="" size="186607" time="0" location="C:\Users\asus\.ivy2\cache\org.parboiled\parboiled-core\jars\parboiled-core-1.1.7.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.7/parboiled-core-1.1.7.jar"/>
+					</artifact>
+					<artifact name="parboiled-core" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="166639" time="0" location="C:\Users\asus\.ivy2\cache\org.parboiled\parboiled-core\srcs\parboiled-core-1.1.7-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/parboiled/parboiled-core/1.1.7/parboiled-core-1.1.7-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-util">
+			<revision name="1.2.3" status="release" pubdate="20150324214239" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="22">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3269" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-util\ivy-1.2.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/spray/spray-util/1.2.3/spray-util-1.2.3.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.2.3" rev-constraint-default="1.2.3" rev-constraint-dynamic="1.2.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-util" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="29887" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-util\srcs\spray-util-1.2.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-util/1.2.3/spray-util-1.2.3-sources.jar"/>
+					</artifact>
+					<artifact name="spray-util" type="jar" ext="jar" status="no" details="" size="128847" time="0" location="C:\Users\asus\.ivy2\cache\io.spray\spray-util\jars\spray-util-1.2.3.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/spray/spray-util/1.2.3/spray-util-1.2.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-cluster_2.10">
+			<revision name="2.2.3" status="release" pubdate="20131023164049" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="14">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3451" time="0" location="C:\Users\asus\.ivy2\cache\com.typesafe.akka\akka-cluster_2.10\ivy-2.2.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-cluster_2.10/2.2.3/akka-cluster_2.10-2.2.3.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="2.2.3" rev-constraint-default="2.2.3" rev-constraint-dynamic="2.2.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="akka-cluster_2.10" type="jar" ext="jar" status="no" details="" size="962015" time="0" location="C:\Users\asus\.ivy2\cache\com.typesafe.akka\akka-cluster_2.10\jars\akka-cluster_2.10-2.2.3.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/akka/akka-cluster_2.10/2.2.3/akka-cluster_2.10-2.2.3.jar"/>
+					</artifact>
+					<artifact name="akka-cluster_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="64783" time="0" location="C:\Users\asus\.ivy2\cache\com.typesafe.akka\akka-cluster_2.10\srcs\akka-cluster_2.10-2.2.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/akka/akka-cluster_2.10/2.2.3/akka-cluster_2.10-2.2.3-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="net.sandrogrzicic" name="scalabuff-runtime_2.10">
+			<revision name="1.2.0" status="release" pubdate="20130507034930" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/SandroGrzicic/ScalaBuff" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="19">
+				<license name="Apache" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2956" time="0" location="C:\Users\asus\.ivy2\cache\net.sandrogrzicic\scalabuff-runtime_2.10\ivy-1.2.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/net/sandrogrzicic/scalabuff-runtime_2.10/1.2.0/scalabuff-runtime_2.10-1.2.0.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.2.0" rev-constraint-default="1.2.0" rev-constraint-dynamic="1.2.0" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="scalabuff-runtime_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="4867" time="0" location="C:\Users\asus\.ivy2\cache\net.sandrogrzicic\scalabuff-runtime_2.10\srcs\scalabuff-runtime_2.10-1.2.0-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/net/sandrogrzicic/scalabuff-runtime_2.10/1.2.0/scalabuff-runtime_2.10-1.2.0-sources.jar"/>
+					</artifact>
+					<artifact name="scalabuff-runtime_2.10" type="jar" ext="jar" status="no" details="" size="19948" time="0" location="C:\Users\asus\.ivy2\cache\net.sandrogrzicic\scalabuff-runtime_2.10\jars\scalabuff-runtime_2.10-1.2.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/net/sandrogrzicic/scalabuff-runtime_2.10/1.2.0/scalabuff-runtime_2.10-1.2.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-remote_2.10">
+			<revision name="2.2.3" status="release" pubdate="20131023163831" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="15">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3935" time="0" location="C:\Users\asus\.ivy2\cache\com.typesafe.akka\akka-remote_2.10\ivy-2.2.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-remote_2.10/2.2.3/akka-remote_2.10-2.2.3.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="2.2.3" rev-constraint-default="2.2.3" rev-constraint-dynamic="2.2.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="akka-remote_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="129040" time="0" location="C:\Users\asus\.ivy2\cache\com.typesafe.akka\akka-remote_2.10\srcs\akka-remote_2.10-2.2.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/akka/akka-remote_2.10/2.2.3/akka-remote_2.10-2.2.3-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.google.protobuf" name="protobuf-java">
+			<revision name="2.4.1" status="release" pubdate="20110707033342" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://code.google.com/p/protobuf" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="18">
+				<license name="New BSD license" url="http://www.opensource.org/licenses/bsd-license.php"/>
+				<metadata-artifact status="no" details="" size="3092" time="0" location="C:\Users\asus\.ivy2\cache\com.google.protobuf\protobuf-java\ivy-2.4.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/2.4.1/protobuf-java-2.4.1.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="2.4.1" rev-constraint-default="2.4.1" rev-constraint-dynamic="2.4.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="protobuf-java" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="200142" time="0" location="C:\Users\asus\.ivy2\cache\com.google.protobuf\protobuf-java\srcs\protobuf-java-2.4.1-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/google/protobuf/protobuf-java/2.4.1/protobuf-java-2.4.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty">
+			<revision name="3.6.6.Final" status="release" pubdate="20130515142624" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://netty.io/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="17">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="6485" time="0" location="C:\Users\asus\.ivy2\cache\io.netty\netty\ivy-3.6.6.Final.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/io/netty/netty/3.6.6.Final/netty-3.6.6.Final.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="3.6.6.Final" rev-constraint-default="3.6.6.Final" rev-constraint-dynamic="3.6.6.Final" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="netty" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1065495" time="0" location="C:\Users\asus\.ivy2\cache\io.netty\netty\srcs\netty-3.6.6.Final-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/netty/netty/3.6.6.Final/netty-3.6.6.Final-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-actor_2.10">
+			<revision name="2.2.3" status="release" pubdate="20131023163548" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="16">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2776" time="0" location="C:\Users\asus\.ivy2\cache\com.typesafe.akka\akka-actor_2.10\ivy-2.2.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.10/2.2.3/akka-actor_2.10-2.2.3.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="2.2.3" rev-constraint-default="2.2.3" rev-constraint-dynamic="2.2.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="akka-actor_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="321821" time="0" location="C:\Users\asus\.ivy2\cache\com.typesafe.akka\akka-actor_2.10\srcs\akka-actor_2.10-2.2.3-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/akka/akka-actor_2.10/2.2.3/akka-actor_2.10-2.2.3-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="spark.jobserver" name="job-server-api_2.10">
+			<revision name="0.7.0-SNAPSHOT_cdh-5.7" status="release" pubdate="20170104103923" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spark-jobserver/spark-jobserver" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="6">
+				<license name="Apache-2.0" url="http://choosealicense.com/licenses/apache/"/>
+				<metadata-artifact status="no" details="" size="2987" time="0" location="C:\Users\asus\.ivy2\cache\spark.jobserver\job-server-api_2.10\ivy-0.7.0-SNAPSHOT_cdh-5.7.xml" searched="false" origin-is-local="true" origin-location="C:\Users\asus\.ivy2\local\spark.jobserver\job-server-api_2.10\0.7.0-SNAPSHOT_cdh-5.7\ivys\ivy.xml"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="0.7.0-SNAPSHOT_cdh-5.7" rev-constraint-default="0.7.0-SNAPSHOT_cdh-5.7" rev-constraint-dynamic="0.7.0-SNAPSHOT_cdh-5.7" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="job-server-api_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="13890" time="0" location="C:\Users\asus\.ivy2\local\spark.jobserver\job-server-api_2.10\0.7.0-SNAPSHOT_cdh-5.7\srcs\job-server-api_2.10-sources.jar">
+						<origin-location is-local="true" location="C:\Users\asus\.ivy2\local\spark.jobserver\job-server-api_2.10\0.7.0-SNAPSHOT_cdh-5.7\srcs\job-server-api_2.10-sources.jar"/>
+					</artifact>
+					<artifact name="job-server-api_2.10" type="jar" ext="jar" status="no" details="" size="95133" time="0" location="C:\Users\asus\.ivy2\local\spark.jobserver\job-server-api_2.10\0.7.0-SNAPSHOT_cdh-5.7\jars\job-server-api_2.10.jar">
+						<origin-location is-local="true" location="C:\Users\asus\.ivy2\local\spark.jobserver\job-server-api_2.10\0.7.0-SNAPSHOT_cdh-5.7\jars\job-server-api_2.10.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="joda-time" name="joda-time">
+			<revision name="1.6" status="release" pubdate="20081202061520" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://joda-time.sourceforge.net" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="8">
+				<license name="Apache 2" url="http://www.apache.org/licenses/"/>
+				<metadata-artifact status="no" details="" size="2583" time="0" location="C:\Users\asus\.ivy2\cache\joda-time\joda-time\ivy-1.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/joda-time/joda-time/1.6/joda-time-1.6.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.6" rev-constraint-default="1.6" rev-constraint-dynamic="1.6" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="joda-time" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="476722" time="0" location="C:\Users\asus\.ivy2\cache\joda-time\joda-time\srcs\joda-time-1.6-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/joda-time/joda-time/1.6/joda-time-1.6-sources.jar"/>
+					</artifact>
+					<artifact name="joda-time" type="jar" ext="jar" status="no" details="" size="534827" time="0" location="C:\Users\asus\.ivy2\cache\joda-time\joda-time\jars\joda-time-1.6.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/joda-time/joda-time/1.6/joda-time-1.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.joda" name="joda-convert">
+			<revision name="1.8.1" status="release" pubdate="20151002185804" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.joda.org/joda-convert/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="7">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="6376" time="0" location="C:\Users\asus\.ivy2\cache\org.joda\joda-convert\ivy-1.8.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/joda/joda-convert/1.8.1/joda-convert-1.8.1.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.8.1" rev-constraint-default="1.8.1" rev-constraint-dynamic="1.8.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="joda-convert" type="jar" ext="jar" status="no" details="" size="111521" time="0" location="C:\Users\asus\.ivy2\cache\org.joda\joda-convert\jars\joda-convert-1.8.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/joda/joda-convert/1.8.1/joda-convert-1.8.1.jar"/>
+					</artifact>
+					<artifact name="joda-convert" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="45686" time="0" location="C:\Users\asus\.ivy2\cache\org.joda\joda-convert\srcs\joda-convert-1.8.1-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/joda/joda-convert/1.8.1/joda-convert-1.8.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scalactic" name="scalactic_2.10">
+			<revision name="2.2.6" status="release" pubdate="20160106025928" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalatest.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="11">
+				<license name="the Apache License, ASL Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3090" time="0" location="C:\Users\asus\.ivy2\cache\org.scalactic\scalactic_2.10\ivy-2.2.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalactic/scalactic_2.10/2.2.6/scalactic_2.10-2.2.6.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="2.2.6" rev-constraint-default="2.2.6" rev-constraint-dynamic="2.2.6" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="scalactic_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="242" time="0" location="C:\Users\asus\.ivy2\cache\org.scalactic\scalactic_2.10\srcs\scalactic_2.10-2.2.6-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/scalactic/scalactic_2.10/2.2.6/scalactic_2.10-2.2.6-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-reflect">
+			<revision name="2.10.6" status="release" pubdate="20150918173538" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.6/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="9">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html    "/>
+				<metadata-artifact status="no" details="" size="2870" time="0" location="C:\Users\asus\.ivy2\cache\org.scala-lang\scala-reflect\ivy-2.10.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.6/scala-reflect-2.10.6.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="2.10.6" rev-constraint-default="2.10.6" rev-constraint-dynamic="2.10.6" callerrev="1.0" extra-info.apiURL="http://www.scala-lang.org/api/2.10.6/"/>
+				<artifacts>
+					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="3206180" time="0" location="C:\Users\asus\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.10.6.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.6/scala-reflect-2.10.6.jar"/>
+					</artifact>
+					<artifact name="scala-reflect" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="435463" time="0" location="C:\Users\asus\.ivy2\cache\org.scala-lang\scala-reflect\srcs\scala-reflect-2.10.6-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/scala-lang/scala-reflect/2.10.6/scala-reflect-2.10.6-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.yammer.metrics" name="metrics-core">
+			<revision name="2.2.0" status="release" pubdate="20121127041109" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="5">
+				<metadata-artifact status="no" details="" size="4104" time="0" location="C:\Users\asus\.ivy2\cache\com.yammer.metrics\metrics-core\ivy-2.2.0.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/yammer/metrics/metrics-core/2.2.0/metrics-core-2.2.0.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="metrics-core" type="jar" ext="jar" status="no" details="" size="82123" time="0" location="C:\Users\asus\.ivy2\cache\com.yammer.metrics\metrics-core\jars\metrics-core-2.2.0.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/yammer/metrics/metrics-core/2.2.0/metrics-core-2.2.0.jar"/>
+					</artifact>
+					<artifact name="metrics-core" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="46705" time="0" location="C:\Users\asus\.ivy2\cache\com.yammer.metrics\metrics-core\srcs\metrics-core-2.2.0-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/yammer/metrics/metrics-core/2.2.0/metrics-core-2.2.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.uncommons.maths" name="uncommons-maths">
+			<revision name="1.2.2a" status="release" pubdate="20110408215605" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://maths.uncommons.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="4">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
+				<metadata-artifact status="no" details="" size="2771" time="0" location="C:\Users\asus\.ivy2\cache\org.uncommons.maths\uncommons-maths\ivy-1.2.2a.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/uncommons/maths/uncommons-maths/1.2.2a/uncommons-maths-1.2.2a.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.2.2a" rev-constraint-default="1.2.2a" rev-constraint-dynamic="1.2.2a" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="uncommons-maths" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="61093" time="0" location="C:\Users\asus\.ivy2\cache\org.uncommons.maths\uncommons-maths\srcs\uncommons-maths-1.2.2a-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/uncommons/maths/uncommons-maths/1.2.2a/uncommons-maths-1.2.2a-sources.jar"/>
+					</artifact>
+					<artifact name="uncommons-maths" type="jar" ext="jar" status="no" details="" size="49019" time="0" location="C:\Users\asus\.ivy2\cache\org.uncommons.maths\uncommons-maths\jars\uncommons-maths-1.2.2a.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/uncommons/maths/uncommons-maths/1.2.2a/uncommons-maths-1.2.2a.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe" name="config">
+			<revision name="1.2.1" status="release" pubdate="20140502225416" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typesafehub/config" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="3">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2768" time="0" location="C:\Users\asus\.ivy2\cache\com.typesafe\config\ivy-1.2.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/config/1.2.1/config-1.2.1.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.2.1" rev-constraint-default="1.2.1" rev-constraint-dynamic="1.2.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="config" type="jar" ext="jar" status="no" details="" size="219554" time="0" location="C:\Users\asus\.ivy2\cache\com.typesafe\config\jars\config-1.2.1.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/config/1.2.1/config-1.2.1.jar"/>
+					</artifact>
+					<artifact name="config" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="132611" time="0" location="C:\Users\asus\.ivy2\cache\com.typesafe\config\srcs\config-1.2.1-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/config/1.2.1/config-1.2.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.slf4j" name="slf4j-api">
+			<revision name="1.7.10" status="release" pubdate="20150107041107" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="2">
+				<metadata-artifact status="no" details="" size="4714" time="0" location="C:\Users\asus\.ivy2\cache\org.slf4j\slf4j-api\ivy-1.7.10.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="1.7.10" rev-constraint-default="1.7.10" rev-constraint-dynamic="1.7.10" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="slf4j-api" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="50644" time="0" location="C:\Users\asus\.ivy2\cache\org.slf4j\slf4j-api\srcs\slf4j-api-1.7.10-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10-sources.jar"/>
+					</artifact>
+					<artifact name="slf4j-api" type="jar" ext="jar" status="no" details="" size="32119" time="0" location="C:\Users\asus\.ivy2\cache\org.slf4j\slf4j-api\jars\slf4j-api-1.7.10.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty-all">
+			<revision name="4.0.29.Final" status="release" pubdate="20150623174400" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="1">
+				<metadata-artifact status="no" details="" size="18658" time="0" location="C:\Users\asus\.ivy2\cache\io.netty\netty-all\ivy-4.0.29.Final.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty-all/4.0.29.Final/netty-all-4.0.29.Final.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="4.0.29.Final" rev-constraint-default="4.0.29.Final" rev-constraint-dynamic="4.0.29.Final" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="netty-all" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1655607" time="0" location="C:\Users\asus\.ivy2\cache\io.netty\netty-all\srcs\netty-all-4.0.29.Final-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/io/netty/netty-all/4.0.29.Final/netty-all-4.0.29.Final-sources.jar"/>
+					</artifact>
+					<artifact name="netty-all" type="jar" ext="jar" status="no" details="" size="2054931" time="0" location="C:\Users\asus\.ivy2\cache\io.netty\netty-all\jars\netty-all-4.0.29.Final.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/netty/netty-all/4.0.29.Final/netty-all-4.0.29.Final.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="2.10.6" status="release" pubdate="20150918173528" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.6/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="0">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html          "/>
+				<metadata-artifact status="no" details="" size="2701" time="0" location="C:\Users\asus\.ivy2\cache\org.scala-lang\scala-library\ivy-2.10.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.6/scala-library-2.10.6.pom"/>
+				<caller organisation="dae_v4" name="dae_v4$sources_2.10" conf="provided" rev="2.10.6" rev-constraint-default="2.10.6" rev-constraint-dynamic="2.10.6" callerrev="1.0" extra-info.apiURL="http://www.scala-lang.org/api/2.10.6/"/>
+				<artifacts>
+					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="7132001" time="0" location="C:\Users\asus\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.10.6.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.6/scala-library-2.10.6.jar"/>
+					</artifact>
+					<artifact name="scala-library" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1065535" time="0" location="C:\Users\asus\.ivy2\cache\org.scala-lang\scala-library\srcs\scala-library-2.10.6-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/scala-lang/scala-library/2.10.6/scala-library-2.10.6-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>
